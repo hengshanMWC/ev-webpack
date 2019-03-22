@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <title>Document</title> -->
+</head>
+<body>
+	<div id="app">
+		<h3>我是标题---{{title}}（点击下方按钮改变标题）</h3>
+		<h4>{{name}}</h4>
+		<span>性别：{{gender}}</span>
+		<div class="box">
+			<input v-model="born" type="number">
+			<input v-model="year" type="number">
+			<span>年龄：{{age}}</span>
+		</div>
+		<div class="box">
+			<input v-model="study.chinese" type="number">
+			<input v-model="study.english" type="number">
+			<input v-model="study.math" type="number">
+			<span>总分：{{score}}</span>
+		</div>
+		<div class="box">
+			<button @click="editTitle">修改标题</button>	
+			<button @dblclick="toGithub">双击跳转github</button>
+		</div>
+	</div>
+</body>
+</html>
