@@ -1,5 +1,6 @@
 import VE from '@/lib/index'
 import ajax from 'utils/ajax'
+import SERVER from './config'
 import '@/assets/style/css/index.css'
 import '@/assets/style/scss/index.scss'
 const app = new VE({
@@ -49,7 +50,7 @@ const app = new VE({
 		console.log(this)
 	},
 	async created(){
-		let res = await ajax('./static/userInfo.json')
+		let res = await ajax(SERVER.URL + SERVER.GET_USERINFO)
 		console.log(res)
 		res = JSON.parse(res)
 		this.name = res.name
@@ -58,7 +59,7 @@ const app = new VE({
 		console.log(this)
 	},
 	async beforeMount(){
-		let res = await ajax('./static/githubUrl.text')
+		let res = await ajax(SERVER.URL + SERVER.GET_GITHUBURL)
 		this.url = res
 		console.log(this)
 	},
