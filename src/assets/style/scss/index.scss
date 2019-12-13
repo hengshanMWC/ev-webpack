@@ -4,4 +4,12 @@
 	.box {
 		padding: 5px 0;
 	}
+	button {
+		animation: bag .4s linear infinite;
+	}
+	@keyframes bag {
+		50% {
+			background-color: #ececec;
+		}
+	}
 }

@@ -1,5 +1,5 @@
 import Watcher from './watcher.js'
-import { getAnalysisKey, setAnalysisKey } from 'utils/mvvm.js'
+import { getAnalysisKey, setAnalysisKey } from '~/mvvm.js'
 export default class Compile {
 	constructor(vm, el){
 		this.vm = vm
@@ -11,14 +11,13 @@ export default class Compile {
 		if(this.el){
 			this.dom = this.getDocumentFragment()
 			this.startCompile(this.dom)
+			// 处理还原
 			this.el.appendChild(this.dom)
 		} else {
 			console.log('el不存在')
 		}
 	}
-	/**
-	* 添加到虚拟dom
-	*/
+	// 抽取出dom放到文档碎片中操作
 	getDocumentFragment(){
 		let el = this.el
 		let dom = document.createDocumentFragment()

@@ -1,5 +1,5 @@
 import Watcher from './watcher.js'
-import { isObject } from 'utils/common.js'
+import { isObject } from '~/common.js'
 export default class Computed {
 	constructor(vm){
 		this.vm = vm

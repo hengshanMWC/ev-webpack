@@ -1,9 +1,9 @@
 import VE from '@/lib/index'
-import ajax from 'utils/ajax'
+import ajax from '~/ajax'
 import SERVER from './config'
 import '@/assets/style/css/index.css'
 import '@/assets/style/scss/index.scss'
-const app = new VE({
+export default new VE({
 	el: '#app',
 	data: {
 		title: '',
@@ -50,11 +50,11 @@ const app = new VE({
 		console.log(this)
 	},
 	async created(){
-		let res = await ajax(SERVER.URL + SERVER.GET_USERINFO)
-		console.log(res)
-		res = JSON.parse(res)
-		this.name = res.name
-		this.sex = res.sex
+		// let res = await ajax(SERVER.URL + SERVER.GET_USERINFO)
+		// console.log(res)
+		// res = JSON.parse(res)
+		// this.name = res.name
+		// this.sex = res.sex
 		
 		console.log(this)
 	},
@@ -66,5 +66,4 @@ const app = new VE({
 	mounted(){
 		console.log(this)
 	},
-
 })

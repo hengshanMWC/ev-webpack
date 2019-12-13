@@ -2,20 +2,23 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const {
+	r
+} = require('./utils')
 module.exports = {
 	entry: {
 		index: './src/index.js'
 	},
 	output: {
-		path: path.resolve(__dirname, 'ev'),
+		path: r('ev'),
 		filename: 'main.js',
 		publicPath: './'
 	},
 	resolve: {
 	  // extensions: ['.js', '.jsx','.ts','.tsx', '.scss','.json','.css'],
 		alias: {
-			'@' :path.resolve(__dirname, 'src'),
-			'~':path.resolve(__dirname, 'src/utils'),
+			'@' : r('src'),
+			'~': r('src/utils')
 		},
 		modules: ['node_modules'],
 	},
@@ -52,9 +55,9 @@ module.exports = {
 			}
 		]
 	},
-	// optimization: {
-	//     runtimeChunk:true,//方式一
-	// }
+	optimization: {
+		runtimeChunk:true,//方式一
+	},
 	plugins: [
 		//打包的时候，根据output清除目录
 		new CleanWebpackPlugin(),

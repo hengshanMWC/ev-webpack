@@ -13,13 +13,13 @@
         "@babel/plugin-syntax-import-meta",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-json-strings",
-        [
-            "import",
-            {
-                "libraryName": "ivue",
-                "libraryDirectory": "src/components"
-            }
-        ]
+        // [
+        //     "import",
+        //     {
+        //         "libraryName": "ivue",
+        //         "libraryDirectory": "src/components"
+        //     }
+        // ]
     ],
     "comments": false
 }

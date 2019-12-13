@@ -1,7 +1,7 @@
 import Observer from './observer.js'
 import Computed from './computed.js'
 import Compile from './compile.js'
-import { isObject } from 'utils/common.js'
+import { isObject } from '~/common.js'
 export default class VE {
 	constructor(opt){
 		let opts = {
@@ -30,7 +30,11 @@ export default class VE {
 		new Compile(this, this.$el)
 		this.lifecycle('mounted')	
 	}
-	//改为$
+	/**
+	 * 合并，并且为true的加上$
+	 * @param {Object} opt 合并数据
+	 * @param {Object} opts 加$判断
+	 */
 	defPot(opt, opts){
 		Object.keys(opts).forEach( key => {
 			let value
