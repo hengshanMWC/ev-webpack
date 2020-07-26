@@ -50,6 +50,7 @@ export default new VE({
 		console.log(this)
 	},
 	async created(){
+		// this.a()
 		// let res = await ajax(SERVER.URL + SERVER.GET_USERINFO)
 		// console.log(res)
 		// res = JSON.parse(res)

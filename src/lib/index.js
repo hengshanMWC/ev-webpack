@@ -81,7 +81,7 @@ export default class VE {
 				set: function setter (newVal) {
 					if(newVal === val) return
 					val = newVal
-				    data[key] = val;
+					data[key] = val;
 					// this.observe(data)
 				}
 			})

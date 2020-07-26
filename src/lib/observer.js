@@ -20,19 +20,19 @@ export default class Observer{
 		let dep = new Dep()
 		Object.defineProperty(obj, key, {
 			enumerable: true,
-    		configurable: true,
-    		get(){
-					// Dep纽扣
-    			if(Dep.target){
-    				dep.addSub(Dep.target)
-    			}
-    			return val
-    		},
-    		set(newVal){
-    			if(val === newVal) return
-					val = newVal
-					dep.notify()
-    		}
+			configurable: true,
+			get(){
+				// Dep纽扣
+				if(Dep.target){
+					dep.addSub(Dep.target)
+				}
+				return val
+			},
+			set(newVal){
+				if(val === newVal) return
+				val = newVal
+				dep.notify()
+			}
 		})
 	}
 	/**
